@@ -10,12 +10,12 @@ Done by: Varsha Tumburu - 1901CS69
 
 ## How to run locally
 
-* Download the whole repo and move to that directory. Run the following commands:
+Download the whole repo and move to that directory. Run the following commands:
 ```
 pip install -r requirements.txt 
 streamlit run index.py
 ```
-* Then visit the local url that shows in cmd and voila!
+Then visit the local url that shows in cmd and voila!
 
 ## Question 1
 
