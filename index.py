@@ -10,16 +10,16 @@ st.title("Nanomaterials Properties")
 
 
 def cuboctahedral_total(layer):
-	return (10 * (layer ** 3) + 15 * (layer ** 2) + 11 * layer + 3) / 3
+	return int((10 * (layer ** 3) + 15 * (layer ** 2) + 11 * layer + 3) / 3)
 
 def cuboctahedral_surface(layer):
-	return 10 * (layer ** 2) + 2
+	return int(10 * (layer ** 2) + 2)
 
 def spherical_total(layer):
-    return (10 * (layer ** 3) - 15 * (layer ** 2) + 11 * layer - 3) / 3
+    return int((10 * (layer ** 3) - 15 * (layer ** 2) + 11 * layer - 3) / 3)
 
 def spherical_surface(layer):
-   	return 10 * (layer ** 2) - 20 * layer + 12
+   	return int(10 * (layer ** 2) - 20 * layer + 12)
 
 shape = st.radio("Select shape of nanoparticle:",('Cuboctahedral', 'Spherical'))
 
@@ -67,4 +67,3 @@ if st.button('Plot graphs'):
 	st.line_chart(chart_data)
 	st.write("Ratio of bulk/surface atoms vs. Particle Size")
 	st.line_chart(ratio_data)
-
