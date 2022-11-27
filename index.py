@@ -1,14 +1,16 @@
-
-# import module
+# Varsha Tumburu (1901CS69)
+# import modules
 import streamlit as st
 import pandas as pd
-# Title
+
+# Set title 
 st.set_page_config(
 	page_title = "Nanoparticles"
 )
 st.title("Nanomaterials Properties")
 
 
+# Functions to deduce number atoms per layer 
 def cuboctahedral_total(layer):
 	return int((10 * (layer ** 3) + 15 * (layer ** 2) + 11 * layer + 3) / 3)
 
@@ -21,10 +23,11 @@ def spherical_total(layer):
 def spherical_surface(layer):
    	return int(10 * (layer ** 2) - 20 * layer + 12)
 
+# Inputs for shape and application of nanoparticle 
 shape = st.radio("Select shape of nanoparticle:",('Cuboctahedral', 'Spherical'))
-
 application = st.selectbox("Select an application:",('Optical', 'Electrical', 'Magnetic', 'Strength', 'None'), 4)
 
+# Set minimum and maximum ranges accordingly 
 global max_range, min_range
 if(application=='Optical'):
 	min_range=40; max_range=100
@@ -35,15 +38,16 @@ elif(application=='Magnetic'):
 elif(application=='Strength'):
 	min_range=1; max_range=50
 else:
-	min_range=1; max_range=50
+	min_range=1; max_range=100
 
-values = st.slider('Specify size limits for nanoparticle: (in nm)', min_range, max_range, (min_range, max_range))
+values = st.slider('Specify size limits for nanoparticle: (in nm)', min_range, max_range, (min_range, 50))
 
 sizes = [i for i in range(values[0], values[1]+1)]
 atoms_surface = []
 atoms_bulk = []
 atom_data = []
 
+# Populate data for tables and graphs depending on shape and range 
 if(shape=='Cuboctahedral'):
 	atom_data = [[i,int(cuboctahedral_total(i)-cuboctahedral_surface(i)),cuboctahedral_surface(i), cuboctahedral_total(i)] for i in sizes]
 	atoms_surface = [(cuboctahedral_surface(k)/cuboctahedral_total(k))*100 for k in sizes]
@@ -62,6 +66,7 @@ st.table(atoms_df)
 chart_data = pd.DataFrame(percentages, columns=['Surface atoms', 'Bulk atoms'])
 ratio_data = pd.DataFrame(ratios)
 
+# On clicking button after setting all parameters
 if st.button('Plot graphs'):
 	st.write("% of Bulk and Surface atoms vs. Particle Size")
 	st.line_chart(chart_data)
