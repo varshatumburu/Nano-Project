@@ -8,6 +8,15 @@ Done by: Varsha Tumburu - 1901CS69
 
 * Python - Streamlit
 
+## How to run locally
+
+* Download the whole repo and move to that directory. Run the following commands:
+```
+pip install -r requirements.txt 
+streamlit run index.py
+```
+* Then visit the local url that shows in cmd and voila!
+
 ## Question 1
 
 Write a computer programming to deduce the total number of atoms and surface atoms for different shell of cuboctahedral/spherical shape. Plot % of atoms in bulk/surface versus particle size. The user should get idea to generate the thickness or size of nanoparticle for a particular application.(namely optical/electrical/magnetic/strength)
