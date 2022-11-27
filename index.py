@@ -45,11 +45,11 @@ atoms_bulk = []
 atom_data = []
 
 if(shape=='Cuboctahedral'):
-	atom_data = [[i,cuboctahedral_total(i)-cuboctahedral_surface(i),cuboctahedral_surface(i), cuboctahedral_total(i)] for i in sizes]
+	atom_data = [[i,int(cuboctahedral_total(i)-cuboctahedral_surface(i)),cuboctahedral_surface(i), cuboctahedral_total(i)] for i in sizes]
 	atoms_surface = [(cuboctahedral_surface(k)/cuboctahedral_total(k))*100 for k in sizes]
 	atoms_bulk = [(1-(cuboctahedral_surface(k)/cuboctahedral_total(k)))*100 for k in sizes]
 elif(shape=='Spherical'):
-	atom_data = [[i,spherical_total(i)-spherical_surface(i),spherical_surface(i), spherical_total(i)] for i in sizes]
+	atom_data = [[i,int(spherical_total(i)-spherical_surface(i)),spherical_surface(i), spherical_total(i)] for i in sizes]
 	atoms_surface = [(spherical_surface(k)/spherical_total(k))*100 for k in sizes]
 	atoms_bulk = [(1-(spherical_surface(k)/spherical_total(k)))*100 for k in sizes]
 
