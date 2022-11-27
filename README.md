@@ -14,9 +14,9 @@ Write a computer programming to deduce the total number of atoms and surface ato
 
 ### Inputs
 
-1. Shape (Cuboctahedral/Spherical)
-2. Application (Optical/Electrical/Magnetic/Strength/None)
-3. Range of size of nanoparticle (default: 1-50 nm): Depends on user choice of application
+* Shape (Cuboctahedral/Spherical)
+* Application (Optical/Electrical/Magnetic/Strength/None)
+* Range of size of nanoparticle (default: 1-50 nm): Depends on user choice of application
 
 ### Output
 
