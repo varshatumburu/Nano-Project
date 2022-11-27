@@ -1,7 +1,6 @@
 # Nano-Project
 
-Name: Varsha Tumburu
-Roll Number: 1901CS69
+Done by: Varsha Tumburu - 1901CS69
 
 [Click here](https://varshatumburu-nano-project-index-csnkyg.streamlit.app/) to visit deployed project
 
